@@ -10,11 +10,14 @@ IDEAS PARA DISEÑO DE PAGINA WEB:
 
 -----------------------------------------------------------------
 IDEAS PARA APLICACIONES A UTIILIZAR EN PAGINA WEB:
-
+-WIX
+-WORDPRESS
 
 
 -----------------------------------------------------------------
-IDEAS PARA UNA POSIBLE APLICACION WEB:
+IDEAS PARA UNA POSIBLE APLICACION:
+-APPSHEET
+-AIRTABLE
 
 
 
