@@ -1,7 +1,0 @@
-Elevator Pitch
-
-Hola, soy Joaquin Avalos, estudiante universitario, sabía usted de un problema que todos enfrentamos al pagar en el transporte público, 
-especialmente los estudiantes cuando mostramos el pase TNE. Junto a mis compañeros de la universidad, estamos desarrollando una aplicación móvil
- que permite pagos instantáneos a través de una billetera virtual, eliminando esas discusiones incómodas y agilizando el proceso.
-Estamos buscando socios que nos ayuden a hacer esta solución una realidad en toda la región de Tarapacá en los próximos 6 meses.
-Si gusta me puede brindar una tarjeta de contacto para mostrarle con más detalles todo lo que hacemos.
