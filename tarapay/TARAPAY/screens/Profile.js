@@ -1,23 +1,36 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const Profile = () => {
     const user = {
-        name: "Juan Pérez", // Cambia el nombre aquí o hazlo dinámico
-        age: 28, // Cambia la edad aquí
-        photo: require('../assets/icons/user.png'), // Asegúrate de tener una imagen adecuada
+        name: "Nicolás Oyanader Rojas",
+        age: 24,
+        type: "Estudiante",
+        lastPayment: "HOY 14:35 hrs",
+        lastBus: "Línea 9 Iquique",
+        photo: require('../assets/icons/user.png'), // Ruta de la imagen
     };
 
     return (
         <View style={styles.container}>
-            {/* Foto de perfil */}
-            <Image source={user.photo} style={styles.photo} />
+            {/* Fondo y avatar */}
+            <View style={styles.profileHeader}>
+                <Image source={user.photo} style={styles.photo} />
+            </View>
 
-            {/* Nombre del usuario */}
-            <Text style={styles.name}>{user.name}</Text>
+            {/* Información del usuario */}
+            <View style={styles.infoContainer}>
+                <Text style={styles.infoText}>Nombre: <Text style={styles.infoHighlight}>{user.name}</Text></Text>
+                <Text style={styles.infoText}>Edad: <Text style={styles.infoHighlight}>{user.age} Años</Text></Text>
+                <Text style={styles.infoText}>Tipo de usuario: <Text style={styles.infoHighlight}>{user.type}</Text></Text>
+                <Text style={styles.infoText}>Último pago: <Text style={styles.infoHighlightRed}>{user.lastPayment}</Text></Text>
+                <Text style={styles.infoText}>Último bus: <Text style={styles.infoHighlight}>{user.lastBus}</Text></Text>
+            </View>
 
-            {/* Edad del usuario */}
-            <Text style={styles.age}>Edad: {user.age} años</Text>
+            {/* Botón de cerrar sesión */}
+            <TouchableOpacity style={styles.logoutButton}>
+                <Text style={styles.logoutText}>Cerrar Sesión</Text>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -25,25 +38,52 @@ const Profile = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        backgroundColor: '#87CEEB', // Fondo azul
         alignItems: 'center',
-        backgroundColor: '#f5f5f5',
+        paddingVertical: 50, // Ajuste para mover hacia abajo
+    },
+    profileHeader: {
+        alignItems: 'center',
+        marginBottom: 20,
     },
     photo: {
         width: 120,
         height: 120,
         borderRadius: 60,
-        marginBottom: 20,
+        backgroundColor: '#FFF',
     },
-    name: {
-        fontSize: 24,
-        fontWeight: 'bold',
+    infoContainer: {
+        backgroundColor: '#FFFFFF',
+        borderRadius: 10,
+        width: '90%',
+        padding: 20,
+        alignItems: 'flex-start',
+        marginTop: 20, // Espacio adicional debajo de la foto
+    },
+    infoText: {
+        fontSize: 16,
         color: '#333',
         marginBottom: 10,
     },
-    age: {
-        fontSize: 18,
-        color: '#666',
+    infoHighlight: {
+        fontWeight: 'bold',
+        color: '#333',
+    },
+    infoHighlightRed: {
+        fontWeight: 'bold',
+        color: '#FF0000',
+    },
+    logoutButton: {
+        backgroundColor: '#1E90FF',
+        borderRadius: 5,
+        marginTop: 20,
+        paddingVertical: 10,
+        paddingHorizontal: 40,
+    },
+    logoutText: {
+        fontSize: 16,
+        color: '#FFFFFF',
+        fontWeight: 'bold',
     },
 });
 
