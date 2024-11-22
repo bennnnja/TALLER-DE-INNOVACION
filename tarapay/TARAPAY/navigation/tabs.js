@@ -13,6 +13,7 @@ import { isIphoneX } from 'react-native-iphone-x-helper'
 
 import { Home, Scan } from "../screens"
 import { COLORS, icons } from "../constants"
+import Profile from "../screens/Profile";
 
 const Tab = createBottomTabNavigator()
 
@@ -172,27 +173,23 @@ const Tabs = () => {
                 }}
             />
             <Tab.Screen
-                name="User"
-                component={Home}
+                name="Profile"
+                component={Profile}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Image
-                            source={icons.user}
+                            source={require('../assets/icons/user.png')}
                             resizeMode="contain"
                             style={{
                                 width: 25,
                                 height: 25,
-                                tintColor: focused ? COLORS.white : COLORS.secondary
+                                tintColor: focused ? COLORS.primary : COLORS.gray,
                             }}
                         />
                     ),
-                    tabBarButton: (props) => (
-                        <TabBarCustomButton
-                            {...props}
-                        />
-                    )
                 }}
             />
+
         </Tab.Navigator>
     )
 }

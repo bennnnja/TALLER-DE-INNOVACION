@@ -4,28 +4,27 @@ import {
     Text,
     Image,
     TouchableOpacity
-} from "react-native"
-import { Camera } from 'expo-camera'
+} from "react-native";
+import { Camera } from 'expo-camera';
 import { COLORS, FONTS, SIZES, icons, images } from "../constants";
 
 const Scan = ({ navigation }) => {
     const [hasPermission, setHasPermission] = React.useState(null);
+    const [cameraType, setCameraType] = React.useState(Camera.Constants.Type.back);
 
     React.useEffect(() => {
         (async () => {
-          const { status } = await Camera.requestCameraPermissionsAsync();
-          setHasPermission(status === 'granted');
+            const { status } = await Camera.requestCameraPermissionsAsync();
+            setHasPermission(status === 'granted');
         })();
-      }, []);
+    }, []);
 
     if (hasPermission === null) {
         return <View />;
     }
     if (hasPermission === false) {
-        return <Text>No access to camera</Text>;
+        return <Text style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>No access to camera</Text>;
     }
-    
-    
 
     function renderHeader() {
         return (
@@ -73,7 +72,7 @@ const Scan = ({ navigation }) => {
                     />
                 </TouchableOpacity>
             </View>
-        )
+        );
     }
 
     function renderScanFocus() {
@@ -95,7 +94,7 @@ const Scan = ({ navigation }) => {
                     }}
                 />
             </View>
-        )
+        );
     }
 
     function renderPaymentMethods() {
@@ -185,22 +184,19 @@ const Scan = ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
             </View>
-        )
+        );
     }
 
     function onBarCodeRead(result) {
-        console.log(result.data)
+        console.log(result.data);
     }
 
     return (
         <View style={{ flex: 1, backgroundColor: COLORS.transparent }}>
             <Camera
-                ref={ref => {
-                    this.camera = ref
-                }}
                 style={{ flex: 1 }}
                 captureAudio={false}
-                type={Camera.Constants.Type.back}
+                type={cameraType}
                 flashMode={Camera.Constants.FlashMode.off}
                 onBarCodeScanned={onBarCodeRead}
                 androidCameraPermissionOptions={{
@@ -215,7 +211,7 @@ const Scan = ({ navigation }) => {
                 {renderPaymentMethods()}
             </Camera>
         </View>
-    )
-}
+    );
+};
 
 export default Scan;
