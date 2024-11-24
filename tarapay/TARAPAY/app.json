@@ -7,13 +7,27 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+<<<<<<< HEAD
+=======
+    "permissions": [
+      "CAMERA"
+    ],
+>>>>>>> 23492c230851b9084399b5cc81277c5529318c83
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
+<<<<<<< HEAD
       "supportsTablet": true
+=======
+      "bundleIdentifier": "com.yourname.qrscanner",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "We need access to the camera to scan QR codes"
+      }
+>>>>>>> 23492c230851b9084399b5cc81277c5529318c83
     },
     "android": {
       "adaptiveIcon": {
@@ -23,6 +37,21 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+<<<<<<< HEAD
     }
+=======
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
+          "recordAudioAndroid": true
+        }
+      ],
+      "expo-barcode-scanner"
+    ]
+>>>>>>> 23492c230851b9084399b5cc81277c5529318c83
   }
 }
